@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>这是是测试iframe跨域使用</div>
-    <input type="text">
+    <input type="text" id="input" /> 
     <button onclick="buttonClick()">发送到竹间测试页面</button>
     <iframe src="http://localhost:5000/home" frameborder="0"></iframe>
 
@@ -18,8 +18,7 @@
 
     <script>
         function buttonClick() {
-            var input = document.getElementsByTagName('input')
-            var value = input.value
+            var value = document.getElementById('input').value
             console.log(value, 1111111);
         }
     </script>
