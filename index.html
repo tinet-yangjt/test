@@ -9,17 +9,26 @@
     <div>这是是测试iframe跨域使用</div>
     <input type="text" id="input" /> 
     <button onclick="buttonClick()">发送到竹间测试页面</button>
-    <iframe src="http://localhost:5000/home" frameborder="0"></iframe>
+    <iframe id="child" src="http://localhost:5000/home" frameborder="0"></iframe>
 
     <div>
         <p>获取竹间接口返回的数据，通过postMessage通信</p>
-        <p class="zhujian"></p>
+        <p id="zhujian" style="color: red;"></p>
     </div>
 
     <script>
         function buttonClick() {
             var value = document.getElementById('input').value
-            console.log(value, 1111111);
+            // 父向子发送消息
+            window.onload = function() {
+                document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
+            }
+
+            // 父页面收到消息并显示
+            window.addEventListener('message', function(event) {
+                console.log(event, event.origin, event.data);
+                document.getElementById('zhujian').innerHTML = event.data;
+            })
         }
     </script>
 </body>
