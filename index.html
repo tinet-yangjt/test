@@ -23,13 +23,13 @@
             window.onload = function() {
                 document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
             }
-
-            // 父页面收到消息并显示
-            window.addEventListener('message', function(event) {
-                console.log(event, event.origin, event.data);
-                document.getElementById('zhujian').innerHTML = event.data;
-            })
         }
+
+        // 父页面收到消息并显示
+        window.addEventListener('message', function(event) {
+            console.log(event, event.origin, event.data);
+            document.getElementById('zhujian').innerHTML = event.data;
+        })
     </script>
 </body>
 </html>
