@@ -20,9 +20,10 @@
         function buttonClick() {
             var value = document.getElementById('input').value
             // 父向子发送消息
-            window.onload = function() {
-                document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
-            }
+            // window.onload = function() {
+            //     document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
+            // }
+            document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
         }
 
         // 父页面收到消息并显示
