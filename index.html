@@ -9,7 +9,7 @@
     <div>这是A页面测试iframe跨域通信使用</div>
     <input type="text" id="input" /> 
     <button onclick="buttonClick()">发送测试B页面</button>
-    <iframe id="child" src="http://localhost:5000/home" frameborder="0"></iframe>
+    <iframe id="child" src="https://tinet-wangying.github.io/iframe/" frameborder="0"></iframe>
 
     <div>
         <p>监听B页面返回的数据</p>
@@ -20,7 +20,7 @@
         function buttonClick() {
             var value = document.getElementById('input').value
             // A页面通过postMessage向B页面发送消息
-            document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
+            document.getElementById('child').contentWindow.postMessage(value, 'https://tinet-wangying.github.io/iframe/');
         }
 
         // A页面监听到B页面消息并显示
