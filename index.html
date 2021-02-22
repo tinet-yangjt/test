@@ -19,14 +19,11 @@
     <script>
         function buttonClick() {
             var value = document.getElementById('input').value
-            // 父向子发送消息
-            // window.onload = function() {
-            //     document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
-            // }
+            // A页面通过postMessage向B页面发送消息
             document.getElementById('child').contentWindow.postMessage(value, 'http://localhost:5000/home');
         }
 
-        // 父页面收到消息并显示
+        // A页面监听到B页面消息并显示
         window.addEventListener('message', function(event) {
             console.log(event, event.origin, event.data);
             document.getElementById('zhujian').innerHTML = event.data;
