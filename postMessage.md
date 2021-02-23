@@ -1,6 +1,7 @@
-官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage
-1、window.postMessage() 方法可以安全地实现跨源通信
-    对于两个不同页面的脚本，只有当执行它们的页面位于具有相同的协议（通常为https），端口号（443为https的默认值），以及主机  (两个页面的模数 Document.domain设置为相同的值) 时，这两个脚本才能相互通信。
+官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage  
+1、window.postMessage() 方法可以安全地实现跨源通信  
+    对于两个不同页面的脚本，只有当执行它们的页面位于具有相同的协议（通常为https），端口号（443为https的默认值），以及主机  
+    (两个页面的模数 Document.domain设置为相同的值) 时，这两个脚本才能相互通信。  
 2、A页面中通过iframe集成B页面
     2.1、A页面向B页面发送消息，使用postMessage
         语法格式：otherWindow.postMessage(message, targetOrigin, [transfer]);
