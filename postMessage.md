@@ -3,11 +3,11 @@
     > 对于两个不同页面的脚本，只有当执行它们的页面位于具有相同的协议（通常为https），端口号（443为https的默认值），以及主机  
     > (两个页面的模数 Document.domain设置为相同的值) 时，这两个脚本才能相互通信。  
 # 2、A页面中通过iframe集成B页面  
-    ## 2.1、A页面向B页面发送消息，使用postMessage  
+    2.1、A页面向B页面发送消息，使用postMessage  
         语法格式：otherWindow.postMessage(message, targetOrigin, [transfer]);  
-        ### 2.1.1、otherWindow：B页面的一个引用，比如使用iframe集成的B页面的contentWindow属性等  
-        ### 2.1.2、message：将要发送到B页面的数据  
-        ### 2.1.3、targetOrigin：指定B页面中的哪些窗口可以接收到消息，值可为'*'或者具体的URL  
+        2.1.1、otherWindow：B页面的一个引用，比如使用iframe集成的B页面的contentWindow属性等  
+        2.1.2、message：将要发送到B页面的数据  
+        2.1.3、targetOrigin：指定B页面中的哪些窗口可以接收到消息，值可为'*'或者具体的URL  
                 在发送消息的时候，如果目标窗口的协议、主机地址或端口这三者的任意一项不匹配targetOrigin提供的值，  
                 那么消息就不会被发送；只有三者完全匹配，消息才会被发送。  
                 这个机制用来控制消息可以发送到哪些窗口  
